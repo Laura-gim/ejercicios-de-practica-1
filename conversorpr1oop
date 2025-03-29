@@ -1,0 +1,15 @@
+class ConversorMoneda: #clase padre
+    tasas_cambio = {'dolar': 0.00093, 'euro': 0.00086, 'real': 0.052} # se definen las tasas de cambio de cada moneda
+    
+    @classmethod
+    def convertir(cls, monto, moneda):
+        return monto * cls.tasas_cambio[moneda]
+
+def solicitar_conversion():
+    monto = float(input("Ingrese el monto en pesos: "))
+    moneda = input("Ingrese la moneda a convertir (dolar, euro, real): ").lower() #.lower convierte todo a minuscula para evitar errores
+    if moneda in ConversorMoneda.tasas_cambio:
+        print(f"El monto en {moneda} es: {ConversorMoneda.convertir(monto, moneda):.2f}") #.2f es pararedondear a dos cifras después de la coma
+    else:
+        print("Moneda no válida")
+solicitar_conversion()
