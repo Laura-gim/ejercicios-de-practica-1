@@ -1,0 +1,49 @@
+class FraccionBase:
+    def __init__(self, numerador, denominador):
+        if denominador == 0:
+            raise ValueError("El denominador no puede ser cero")
+        self.numerador = numerador
+        self.denominador = denominador
+    
+    def __str__(self):
+        return f"{self.numerador}/{self.denominador}"
+    
+    def obtener_numerador(self):
+        return self.numerador
+    
+    def obtener_denominador(self):
+        return self.denominador
+
+class Fraccion(FraccionBase):
+    def suma(self, otra):
+        num = self.numerador * otra.denominador + otra.numerador * self.denominador
+        den = self.denominador * otra.denominador
+        return Fraccion(num, den)
+    
+    def resta(self, otra):
+        num = self.numerador * otra.denominador - otra.numerador * self.denominador
+        den = self.denominador * otra.denominador
+        return Fraccion(num, den)
+    
+    def multiplicacion(self, otra):
+        return Fraccion(self.numerador * otra.numerador, self.denominador * otra.denominador)
+    
+    def division(self, otra):
+        return Fraccion(self.numerador * otra.denominador, self.denominador * otra.numerador)
+
+def cargar_fraccion():
+    num = int(input("Ingrese el numerador: "))
+    den = int(input("Ingrese el denominador: "))
+    return Fraccion(num, den)
+
+
+print("Bienvenidos/as a cuentas con Fracciones")
+a = cargar_fraccion()
+b = cargar_fraccion()
+
+print("El denominador de la primera fracción es:", a.obtener_denominador())
+print("El numerador de la segunda fracción es:", b.obtener_numerador())
+print("La suma de dichas fracciones es:", a.suma(b))
+print("La resta de dichas fracciones es:", a.resta(b))
+print("La multiplicación de dichas fracciones es:", a.multiplicacion(b))
+print("La división es:", a.division(b))
