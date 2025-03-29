@@ -1,7 +1,7 @@
-# ejercicios-de-practica-1*
+# ejercicios-de-practica-1
 Ejercicio 19: Implemente el Ejercicio 14 utilizando clases. Realice las correspondientes
-invocaciones a cada uno de los métodos.*
-Ejercicio 14: Definir tres funciones llamadas convertir_a_dolar, convertir_a_euro y convertir_a_real.
+invocaciones a cada uno de los métodos.* 
+Ejercicio 14: Definir tres funciones llamadas convertir_a_dolar, convertir_a_euro y convertir_a_real.* 
 Cada función recibe un parámetro que representa un monto en pesos y devuelve su conversión
 respectiva
 Ejercicio 20: Implemente el Ejercicio 18 utilizando clases. Realice las correspondientes
